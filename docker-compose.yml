@@ -1,0 +1,17 @@
+# asadmin change-admin-password
+# asadmin --port 4848 enable-secure-admin
+version: '2'
+services:
+  db01:
+    tty: true
+    image: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: $MYSQL_PW
+    ports:
+      - "3307:3306"
+    expose:
+      - "3307"
+    volumes:
+      - pgdata01:/var/lib/mysql
+volumes: 
+    pgdata01:
