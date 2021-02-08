@@ -15,7 +15,6 @@ services:
       - pgdata01:/var/lib/mysql
   phpmyadmin:
     image: phpmyadmin
-#    restart: always
     ports:
       - 8080:80
     environment:
