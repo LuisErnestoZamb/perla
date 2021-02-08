@@ -25,13 +25,19 @@ services:
     working_dir: /root/
     tty: true
     volumes:
-      - .:/root/
+      - .:/home/
     image: openjdk:17-slim-buster
   python_obj:
     working_dir: /root/
     tty: true
     volumes:
-      - .:/root/
+      - .:/home
     image: python:3.7.9-stretch
+  node_obj:
+    working_dir: /root/
+    tty: true
+    volumes:
+      - .:/home/node
+    image: node:slim
 volumes: 
     pgdata01:
