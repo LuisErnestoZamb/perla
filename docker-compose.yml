@@ -27,5 +27,11 @@ services:
     volumes:
       - .:/root/
     image: openjdk:17-slim-buster
+  python_obj:
+    working_dir: /root/
+    tty: true
+    volumes:
+      - .:/root/
+    image: python:3.7.9-stretch
 volumes: 
     pgdata01:
