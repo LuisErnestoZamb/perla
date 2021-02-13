@@ -22,22 +22,28 @@ services:
     links:
       - db01
   java_obj:
-    working_dir: /root/
+    working_dir: /home/
     tty: true
     volumes:
       - .:/home/
     image: openjdk:17-slim-buster
   python_obj:
-    working_dir: /root/
+    working_dir: /home/
     tty: true
     volumes:
       - .:/home
     image: python:3.7.9-stretch
   node_obj:
-    working_dir: /root/
+    working_dir: /home/
     tty: true
     volumes:
       - .:/home/node
     image: node:slim
+  java_obj_32:
+    working_dir: /home/
+    tty: true
+    volumes:
+      - .:/home/
+    image: openjdk:10-ea-32-slim@sha256:aab4f23d15011b09e76d7f5d56d40f1f2fad72afbf3b1cac13748fa5d3c34e28
 volumes: 
     pgdata01:
