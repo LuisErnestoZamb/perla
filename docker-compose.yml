@@ -34,8 +34,24 @@ services:
       - .:/home
     image: python:3.7.9-stretch
   node_obj:
-    working_dir: /home/
+    command: bash -c "yarn start"
+    working_dir: /home/node/registro
     tty: true
+    ports:
+      - "8084:3000"
+    expose:
+      - "8084"
+    volumes:
+      - .:/home/node
+    image: node:slim
+  node_live:
+#    command: bash -c "npm install -g live-server;live-server public"
+    working_dir: /home/node/registro
+    tty: true
+    ports:
+      - "8085:8080"
+    expose:
+      - "8085"
     volumes:
       - .:/home/node
     image: node:slim
